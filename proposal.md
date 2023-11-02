@@ -3,7 +3,7 @@ Nan Chen & Shaocheng Shi
 
 ### Title & Problem Statement: You should have an idea of the specific problem that you are trying to solve for the project.
 - We're trying to implement different CNN models(ResNet18 & VGG19) using pytorch to solve an image classification problem we found on Kaggle.
-- We want to implement the models and see if our accuracy report are someway similar comparing to the original paper.
+- We want to implement the models and see if our accuracy report are somewhat similar comparing to the original paper.
 - Also we will be comparing the arruracy between the two models.
 - Furthermore, we will compare the performance between our built-from-scratch model and the pretained model from pytorch to see how transfer-learning affect deep learning models.
 
