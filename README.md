@@ -1,3 +1,36 @@
 # CS583-final
-我是把kaggle上面的dogs-vs-cats下载下来以后，只用了里面的train文件夹。我把train文件夹重新命名为dogs-vs-cats，再在这个文件夹里面创立train和test两个文件夹，再在train和test里面再分别创立dogs和cats两个文件夹。所以文件夹的顺序是dogs-vs-cats --> train, test. train --> dogs, cats. test --> dogs, cats. 然后我选取10000-12499编号的2500张dog/cat图片放入test里面的dogs/cats，选取0-9999编号的10000张dog/cat图片放入train里面的dogs/cats，这样就完成data的分类了。
-在data_processing.ipynb里面，file的路径是../Downloads/..., 你把downloads改成dogs-vs-cats和data_processing共存的那个文件夹目录就可以run了。
+
+## Data split (data_split.ipynb)
+The original data are downloaded and extraced from the Kaggle zip file. [Link to the data](https://www.kaggle.com/c/dogs-vs-cats)
+```
+original_data/
+├── train/
+│   ├── cat.X.jpg
+│   └── dog.X.jpg
+├── test1/
+│   └── X.jpg
+└── sampleSubmission.csv
+```
+Here we're only using the train dataset since it has labels. We select 100 cat and 100 dog images for training and 25 each for testing (This will be significantly larger when the model implementation is complete) and put them into `processed_data` for `torchvision.datasets.ImageFolder` structure.
+```
+processed_data/
+├── train/
+│   ├── cat/
+│   │   └── cat.X.jpg
+│   └── dog/
+│       └── dog.X.jpg
+└── test/
+    ├── cat/
+    │   └── cat.X.jpg
+    └── dog/
+        └── dog.X.jpg
+``` 
+Note: `X` are numbers from 0, and both image folders are added into `.gitignore`.
+
+To change the amount of images we want use in the training/testing, modify the `data_split.ipynb` file at the following lines:
+```
+copy_images(0, 100, 'cat', source_dir, train_dir)
+copy_images(100, 125, 'cat', source_dir, test_dir)
+copy_images(0, 100, 'dog', source_dir, train_dir)
+copy_images(100, 125, 'dog', source_dir, test_dir)
+```
