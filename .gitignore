@@ -1,2 +1,6 @@
 original_data/
 processed_data/
+vgg19.pkl
+vgg19-pretrained.pkl
+resnet18.pkl
+resnet18-pretrained.pkl
