@@ -11,7 +11,7 @@ original_data/
 │   └── X.jpg
 └── sampleSubmission.csv
 ```
-Here we're only using the train dataset since it has labels. We select 100 cat and 100 dog images for training and 25 each for testing (This will be significantly larger when the model implementation is complete) and put them into `processed_data` for `torchvision.datasets.ImageFolder` structure.
+Here we're only using the train dataset since it has labels. We select 10000 cats and 10000 dog images for training and 2500 each for testing (Using 1000/250 when developing) and put them into `processed_data` for `torchvision.datasets.ImageFolder` structure.
 ```
 processed_data/
 ├── train/
